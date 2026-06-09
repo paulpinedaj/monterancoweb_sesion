@@ -42,23 +42,27 @@
         }
 
 
-            /* ================================= */
-            /* SCROLL REVEAL */
-            /* ================================= */
+.reveal{
 
-            .reveal{
-            opacity:0;
-            transform:translateY(60px);
-            transition:
-                opacity .8s ease,
-                transform .8s ease;
-            }
+    opacity:0;
 
-            .reveal.active{
-            opacity:1;
-            transform:translateY(0);
-            }
+    transform:
+        translateY(60px)
+        scale(.98);
 
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
 
         .container {
             width: 100%;
@@ -340,7 +344,7 @@
 
         <img src="img/logo-monteranco-sesiones.svg"
             alt="MonteRanco"
-            class="logo-principal">
+            class="logo-principal reveal">
 
 
 
@@ -474,7 +478,7 @@
                 </style>
                 <!-- CONTADOR ESTRENO -->
 
-                <div class="countdown-wrapper">
+                <div class="countdown-wrapper reveal">
 
                     <div class="countdown-label">
                         ESTRENO EN
@@ -573,7 +577,7 @@
 
         <!-- HERO -->
 
-        <div class="hero">
+        <div class="hero reveal">
 
             <div class="temporada">
                 TEMPORADA 2
@@ -741,7 +745,7 @@
 }
 </style>
 
-<div class="video-container" id="player">
+<div class="video-container reveal" id="player">
     <div class="video-coming">
 
         <img
@@ -1013,17 +1017,17 @@ revealOnScroll();
 }
 </style>
 
-<section class="section" id="visis">
+<section class="section " id="visis">
             <img src="img/logo-visis.svg"
                 alt="VISIS"
-                class="logo-banda">
+                class="logo-banda reveal">
 
 
                 <!-- ===================================== -->
                 <!-- VISIS - HISTORIA -->
                 <!-- ===================================== -->
 
-                <section class="band-info">
+                <section class="band-info reveal">
 
                     <div class="section-label">
                         SOBRE LA BANDA
@@ -1058,7 +1062,7 @@ revealOnScroll();
                 <!-- INTEGRANTES -->
                 <!-- ===================================== -->
 
-                <section class="members">
+                <section class="members reveal">
 
                     <div class="section-label">
                         INTEGRANTES
@@ -1087,11 +1091,11 @@ revealOnScroll();
 
 
 
-            <p class="social-title">
+            <p class="social-title reveal">
                 Sigue las redes de VISIS
             </p>
 
-            <div class="social">
+            <div class="social reveal">
 
                 <a href="https://www.instagram.com/visischile/"
                     target="_blank">
@@ -1119,10 +1123,11 @@ revealOnScroll();
 
 
         <!-- CULTURA -->
-
+<div class="reveal">
         <img src="img/logo-cultura.svg"
             alt="Gobierno de Chile"
-            class="logo-gobierno">
+            class="logo-gobierno ">
+        </div>
 
         <hr>
 
@@ -1319,17 +1324,19 @@ revealOnScroll();
         <!-- ===================================== -->
 
         <section class="team-section">
+<div class="reveal">
 
             <img src="img/logo-monteranco-sesiones.svg"
                 alt="Sesiones Monteranco"
-                class="team-logo">
+                class="team-logo ">
 
-            <div class="section-label">
+</div>
+            <div class="section-label reveal">
                 TEMPORADA 2
             </div>
 
 
-            <div class="team-description">
+            <div class="team-description reveal">
 
                 <p>
                     La música del sur vuelve a tomar protagonismo.
@@ -1353,11 +1360,11 @@ revealOnScroll();
 
             </div>
 
-            <div class="section-label">
+            <div class="section-label reveal">
                 Equipo Monteranco
             </div>
 
-            <div class="team-grid">
+            <div class="team-grid reveal">
 
                 <div class="team-card">
                     <h3>Máximo Torres</h3>
@@ -1387,11 +1394,11 @@ revealOnScroll();
             </div>
 
 
-            <div class="section-label">
+            <div class="section-label reveal ">
                 Agradecimientos
             </div>
 
-            <div class="team-grid">
+            <div class="team-grid reveal">
 
                 <div class="team-card">
                     <h3>Francisca Ortega</h3>
@@ -1401,7 +1408,7 @@ revealOnScroll();
 
             </div>
 
-            <div class="team-footer-text">
+            <div class="team-footer-text reveal">
 
                 Desde Futrono, en el corazón de la Provincia del Ranco,
                 Estudio MonteRanco vuelve a convertirse en un punto de encuentro
@@ -1417,24 +1424,24 @@ revealOnScroll();
 
         <!-- MONTERANCO -->
 
-        <section class="section">
+        <section class="section ">
 
             <img src="img/logo-monteranco.svg"
                 alt="MonteRanco"
-                class="logo-estudio">
+                class="logo-estudio reveal">
 
 
-            <div class="services">
+            <div class="services reveal">
                 <p>Grabación</p>
                 <p>Mezcla</p>
                 <p>Mastering</p>
             </div>
 
-            <p class="social-title">
+            <p class="social-title reveal">
                 Sigue nuestras redes
             </p>
 
-            <div class="social">
+            <div class="social reveal">
 
                 <a href="https://www.youtube.com/@monterancosesiones2716/videos"
                     target="_blank">
@@ -1515,7 +1522,7 @@ revealOnScroll();
             }
             </style>
 
-            <div class="contact-box">
+            <div class="contact-box reveal">
 
                 <div class="contact-label">
                     CONTACTO
@@ -1543,11 +1550,11 @@ margin-right: 6px;
 </style>
 
 
-
+<div class="reveal">
         <img src="img/logo-skeleton.svg"
             alt="Skeleton"
-            class="logo-skeleton">
-
+            class="logo-skeleton ">
+</div>
 
             Hecho por
             <a href="https://skeleton.cl" target="_blank">
@@ -1658,6 +1665,55 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const reveals =
+        document.querySelectorAll(".reveal");
+
+    const observer =
+        new IntersectionObserver(
+
+        (entries) => {
+
+            const visibles = entries
+                .filter(entry => entry.isIntersecting);
+
+            visibles.forEach((entry,index) => {
+
+                setTimeout(() => {
+
+                    entry.target.classList.add("show");
+
+                }, index * 120);
+
+                observer.unobserve(entry.target);
+
+            });
+
+        },
+
+        {
+            threshold:0.1,
+            rootMargin:"0px 0px -10% 0px"
+        }
+
+    );
+
+    reveals.forEach(el => {
+
+        observer.observe(el);
+
+    });
+
+});
+
+</script>
+
 </body>
 
 </html>
