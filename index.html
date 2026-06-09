@@ -41,6 +41,25 @@
             min-height: 100vh;
         }
 
+
+            /* ================================= */
+            /* SCROLL REVEAL */
+            /* ================================= */
+
+            .reveal{
+            opacity:0;
+            transform:translateY(60px);
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+            }
+
+            .reveal.active{
+            opacity:1;
+            transform:translateY(0);
+            }
+
+
         .container {
             width: 100%;
             max-width: 1180px;
@@ -315,7 +334,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container ">
 
         <!-- MONTERANCO -->
 
@@ -722,8 +741,7 @@
 }
 </style>
 
-<div class="video-container">
-
+<div class="video-container" id="player">
     <div class="video-coming">
 
         <img
@@ -779,6 +797,38 @@ function updateProgress(){
 }
 
 updateProgress();
+
+</script>
+
+
+
+
+
+
+
+
+
+    <script>
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+    reveals.forEach(el => {
+
+        const top = el.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 120){
+            el.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
 
 </script>
 
@@ -963,8 +1013,7 @@ updateProgress();
 }
 </style>
 
-        <section class="section">
-
+<section class="section" id="visis">
             <img src="img/logo-visis.svg"
                 alt="VISIS"
                 class="logo-banda">
@@ -1480,8 +1529,7 @@ updateProgress();
 
         </section>
 
-        <footer>
-
+<footer id="footer">
 
 
 
@@ -1509,6 +1557,107 @@ margin-right: 6px;
 
     </div>
 
+
+
+
+
+    <style>
+/* ================================= */
+/* GO TO PLAYER */
+/* ================================= */
+
+#go-player{
+
+    position:fixed;
+
+    right:30px;
+    bottom:30px;
+
+    width:65px;
+    height:65px;
+
+    border-radius:999px;
+
+    background:rgba(15,15,15,.95);
+
+    border:1px solid #333;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:99999;
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s ease;
+
+    box-shadow:
+        0 0 25px rgba(0,0,0,.45);
+}
+
+#go-player:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#777;
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.12);
+}
+
+#go-player i{
+
+    color:#fff;
+
+    font-size:26px;
+}
+
+@media(max-width:768px){
+
+    #go-player{
+
+        right:20px;
+        bottom:20px;
+
+        width:58px;
+        height:58px;
+    }
+}
+    </style>
+<div id="go-player">
+    <i class="fa fa-play"></i>
+</div>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const button = document.getElementById("go-player");
+    const player = document.getElementById("player");
+
+    button.addEventListener("click", () => {
+
+        const offset = 100;
+
+        const y =
+            player.getBoundingClientRect().top +
+            window.pageYOffset -
+            offset;
+
+        window.scrollTo({
+            top: y,
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+</script>
 </body>
 
 </html>
