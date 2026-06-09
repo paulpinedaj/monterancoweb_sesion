@@ -34,13 +34,44 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            background: #000;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-            min-height: 100vh;
-        }
+body {
 
+    background-color:#000;
+
+    color:#fff;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    min-height:100vh;
+
+    position:relative;
+
+    overflow-x:hidden;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.72),
+            rgba(0,0,0,.78)
+        ),
+        url("img/fondo-monteranco.jpg");
+
+    background-size:cover;
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    z-index:-2;
+}
 
 .reveal{
 
@@ -952,8 +983,7 @@ revealOnScroll();
 
     border:1px solid #1f1f1f;
 
-    background:#0a0a0a;
-
+background: rgba(1, 1, 1, 0.5);
     padding:35px 20px;
 
     border-radius:18px;
@@ -1217,7 +1247,7 @@ revealOnScroll();
 
         .team-card{
 
-            background:#0a0a0a;
+background: rgba(1, 1, 1, 0.5);
 
             border:1px solid #1f1f1f;
 
@@ -1550,11 +1580,10 @@ margin-right: 6px;
 </style>
 
 
-<div class="reveal">
         <img src="img/logo-skeleton.svg"
             alt="Skeleton"
             class="logo-skeleton ">
-</div>
+
 
             Hecho por
             <a href="https://skeleton.cl" target="_blank">
