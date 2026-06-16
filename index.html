@@ -776,31 +776,18 @@ body::before{
 }
 </style>
 
-<div class="video-container reveal" id="player">
-    <div class="video-coming">
+        <div class="video-container reveal" id="player">
+        
 
-        <img
-            src="img/logo-monteranco-sesiones.svg"
-            alt="Sesiones Monteranco"
-            class="coming-logo">
-
-
-        <div class="progress-container">
-
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-
-            <div class="progress-text">
-                <span id="progressPercent">0%</span>
-                completado
-            </div>
+            <iframe
+                id="player"
+                src="https://www.youtube.com/embed/ZVkuEzWHHnE?si=MXVt9GBLxraysfax"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
 
         </div>
-
-    </div>
-
-</div>
 <script>
 
 const releaseDate = new Date("2026-06-15 21:00:00").getTime();
